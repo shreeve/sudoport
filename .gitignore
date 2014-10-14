@@ -1,0 +1,24 @@
+
+# Extensions
+
+*.diff
+*.dylib
+*.err
+*.log
+*.o
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+
+# Files
+
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
