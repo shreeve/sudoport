@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 
   // if run as user, inject libsudoport and execute command-line
   if (geteuid()) {
-    setenv("DYLD_INSERT_LIBRARIES", "libsudoport.dylib", 1);
+    setenv("DYLD_INSERT_LIBRARIES", "/usr/local/lib/libsudoport.dylib", 1);
     execvp(argv[1], argv + 1);
     _exit(EINVAL);
   }
