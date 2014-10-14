@@ -13,8 +13,10 @@ int main(int argc, char *argv[]) {
 
   // ==[ Check usage ]==
 
+  // if run as user, inject libsudoport and execute command-line
   if (geteuid()) {
-    fprintf(stderr, "%s must be run as root or setuid root\n", argv[0]);
+    setenv("DYLD_INSERT_LIBRARIES", "libsudoport.dylib", 1);
+    execvp(argv[1], argv + 1);
     _exit(EINVAL);
   }
 
