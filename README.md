@@ -1,7 +1,7 @@
 sudoport
 ========
 
-# Summary
+## Summary
 
 The sudoport utility allows non-root users, who are able to run the
 sudo command, to bind privileged ports on Mac OSX. It accomplishes this
@@ -13,27 +13,29 @@ Any user that can already run sudo can run sudoport, but it's suggested
 that you disable the password prompt for such users. If the admin group
 is how you are controlling access to sudo, then modify it as follows:
 
-  %admin  ALL=(ALL) NOPASSWD: ALL
+  ```%admin  ALL=(ALL) NOPASSWD: ALL```
 
 This allows commands like the following to bind() on privileged ports:
 
-  sudoport nc -l -p 443
+  ```sudoport nc -l -p 443```
 
-# Installing
+## Installing
 
 Compilation requires ruby and rake to be installed. Just type:
 
-  rake install
+  ```rake install```
 
 This will build and install sudoport and libsudoport.dylib to /usr/local.
 You can also run the following rake tasks:
 
-  rake           # builds in the local directory
-  rake clean     # cleans current directory
-  rake uninstall # removes from /usr/local
+```
+rake           # builds in the local directory
+rake clean     # cleans current directory
+rake uninstall # removes from /usr/local
+```
 
-# Credits
+## Credits
 
 * [authbind](http://www.chiark.greenend.org.uk/ucgi/~ian/git/authbind.git/)
 * [Castaglia/MacOSX-authbind](https://github.com/Castaglia/MacOSX-authbind)
-* Steve Shreeve <steve.shreeve@gmail.com>
+* Steve Shreeve (steve.shreeve@gmail.com)
