@@ -3,15 +3,15 @@ sudoport
 
 ## Summary
 
-The sudoport utility allows non-root users, who are able to run the
-sudo command, to bind privileged ports on Mac OSX. It accomplishes this
+The ```sudoport``` utility allows non-root users, who are able to run the
+```sudo``` command, to bind privileged ports on Mac OSX. It accomplishes this
 by injecting a dynamic library prior to executing the supplied command.
-This dynamic library intercepts all calls to bind() on privileged ports
-and, instead, forks a child process that runs sudo and the sudoport
+This dynamic library intercepts all calls to ```bind()``` on privileged ports
+and, instead, forks a child process that runs ```sudo``` and the ```sudoport```
 helper, which does the actual binding of the privileged port as root.
-Any user that can already run sudo can run sudoport, but it's suggested
+Any user that can already run ```sudo``` can run ```sudoport```, but it's suggested
 that you disable the password prompt for such users. If the admin group
-is how you are controlling access to sudo, then modify it as follows:
+is how you are controlling access to ```sudo```, then modify it as follows:
 
   ```%admin  ALL=(ALL) NOPASSWD: ALL```
 
